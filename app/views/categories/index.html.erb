@@ -1,0 +1,8 @@
+<h1>All the news</h1>
+
+<% if !@categories.empty? %>
+  <% @categories.each do |category| %>
+    <div><%= category.name %></div>
+  <% end %>
+<% end %>
+<%= link_to 'Add new category', new_category_path %>

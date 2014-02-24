@@ -1,4 +1,23 @@
 CmsLight::Application.routes.draw do
+  
+
+  #get "articles/index"
+  #get "articles/show"
+  #get "articles/edit"
+  #get "articles/new"
+  #get "subcategories/index"
+  #get "subcategories/show"
+  #get "subcategories/edit"
+  #get "subcategories/new"
+  #get "categories/index"
+  #get "categories/show"
+  #get "categories/edit"
+  #get "categories/new"
+  
+  resources :categories, :subcategories, :articles
+  
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
