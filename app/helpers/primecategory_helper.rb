@@ -1,0 +1,2 @@
+module PrimecategoryHelper
+end

@@ -1,5 +1,6 @@
 CmsLight::Application.routes.draw do
   
+  root 'primecategories#index'
 
   #get "articles/index"
   #get "articles/show"
@@ -14,7 +15,7 @@ CmsLight::Application.routes.draw do
   #get "categories/edit"
   #get "categories/new"
   
-  resources :categories, :subcategories, :articles
+  resources :primecategories, :categories, :subcategories, :articles
   
   
   
