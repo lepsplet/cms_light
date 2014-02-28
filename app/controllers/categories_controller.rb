@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
   end
 
   def edit
+
     @category = Category.find(params[:id])
   end
   
@@ -21,14 +22,16 @@ class CategoriesController < ApplicationController
   end
  
   def new
-    @category = Category.new
+    @pcategory = Primecategory.find(params[:id])
+    @category = @pcategory.categories.build
   end
   
   def create
-    @category = Category.new(category_params)
+    @pcategory = Primecategory.find(params[:id])
+    @category = @pcategory.categories.build(category_params)
  
     if @category.save
-      redirect_to categories_path
+      redirect_to new_category_path(id: @pcategory.id)
     else
       render 'new'
     end

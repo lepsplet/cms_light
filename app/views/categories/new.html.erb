@@ -1,4 +1,7 @@
-<h1>Add new subcategory</h1>
+<h1><%= @pcategory.name %></h1>
+<p>(<%= link_to 'back', new_primecategory_path %>)</p>
+
+<h3>Add new subcategory</h3>
 
 <%= render 'form' %>
 

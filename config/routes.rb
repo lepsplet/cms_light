@@ -1,6 +1,6 @@
 CmsLight::Application.routes.draw do
   
-  root 'primecategories#index'
+  root 'primecategories#new'
 
   #get "articles/index"
   #get "articles/show"

@@ -14,7 +14,7 @@ class PrimecategoriesController < ApplicationController
     @pcategory = Primecategory.find(params[:id])
  
     if @pcategory.update(primecategory_params)
-      redirect_to primecategories_path
+      redirect_to new_primecategory_path
     else
       render 'edit'
     end
@@ -22,13 +22,14 @@ class PrimecategoriesController < ApplicationController
  
   def new
     @pcategory = Primecategory.new
+    @pcategories = Primecategory.find(:all)
   end
   
   def create
     @pcategory = Primecategory.new(primecategory_params)
  
     if @pcategory.save
-      redirect_to primecategories_path
+      redirect_to new_primecategory_path
     else
       render 'new'
     end
@@ -38,7 +39,7 @@ class PrimecategoriesController < ApplicationController
     @pcategory = Primecategory.find(params[:id])
     @pcategory.destroy
  
-    redirect_to primecategories_path
+    redirect_to new_primecategory_path
   end
  
  private

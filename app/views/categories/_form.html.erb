@@ -1,4 +1,4 @@
-<%= form_for @category do |f| %>
+<%= form_for @category, url: { action: :create, id: @pcategory.id} do |f| %>
   <% if @category.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@category.errors.count, "error") %> prohibited
@@ -17,4 +17,18 @@
   <p>
     <%= f.submit %>
   </p>
+  
+  <% if @pcategory.categories.exists? %>
+  <% for item in  @pcategory.categories %><br>
+    <% if !item.name.nil? %>
+      <%= link_to item.name, controller: :subcategories, action: :new, id: item.id %>
+      <%= link_to 'edit', edit_category_path(item) %> 
+      <%= link_to 'delete', category_path(item),
+                      method: :delete, data: { confirm: 'Are you sure?' } %> 
+    <% end %>
+
+  <% end %>
+  <% else %>
+    <p> No categories yet </p>
+  <% end %>
 <% end %>
