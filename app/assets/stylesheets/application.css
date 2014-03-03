@@ -11,3 +11,14 @@
  *= require_self
  *= require_tree .
  */
+
+.body { border: 1px solid silver;
+        padding: 10px 40px 40px 40px; 
+        margin-top: 30px;
+        margin-bottom: 50px;
+}
+
+.primec {  pading-bottom: 5px
+            
+  
+}

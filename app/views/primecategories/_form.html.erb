@@ -15,17 +15,19 @@
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-lg btn-primary' %>
   </p> 
-
-  <p>List of all news: </p>
   <br>
-  <% if !@pcategories.blank? %>
+  <div>List of all news: </div>
+    <% if !@pcategories.blank? %>
     <% for item in @pcategories %><br>
-    <%= link_to item.name, controller: :categories,  action: :new, id: item.id %>
-     <%= link_to 'edit', edit_primecategory_path(item) %> 
-      <%= link_to 'delete', primecategory_path(item),
-                    method: :delete, data: { confirm: 'Are you sure?' } %> 
+  <div>
+    
+    <div class="primec"><%= link_to item.name, { controller: :categories, action: :new, id: item.id }, class: 'btn btn-success btn-lg' %> </div><br>
+    <%= link_to 'edit', edit_primecategory_path(item), class: 'btn btn-default' %>
+    <%= link_to 'delete', primecategory_path(item),
+                    method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %> 
+  </div>
     <% end %>
   <% else %>
 
