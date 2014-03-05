@@ -12,7 +12,9 @@ class CategoriesController < ApplicationController
   end
   
   def update
+    
     @category = Category.find(params[:id])
+    
  
     if @category.update(category_params)
       redirect_to categories_path
@@ -41,7 +43,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @category.destroy
  
-    redirect_to categories_path
+    redirect_to new_category_path
   end
  
  private
