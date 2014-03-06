@@ -1,7 +1,39 @@
-<h1><%= @pcategory.name %></h1>
-<p>(<%= link_to 'back', new_primecategory_path %>)</p>
+<h1><%= @pcategory.name %>
+  <span><%= link_to 'back', new_primecategory_path, class: 'btn btn-default btn-xs' %></span>
+</h1>
 
 <h3>Add new subcategory</h3>
 
-<%= render 'form' %>
+<%= bootstrap_form_for @category, url: { action: :create, id: @pcategory.id} do |f| %>
+  <% if @category.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@category.errors.count, "error") %> prohibited
+      this article from being saved:</h2>
+    <ul>
+    <% @category.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.text_field :name, placeholder: 'Write a new news subcategory...' %>
+  </p>
+  <p>
+    <%= f.submit 'Create Subcategory' %>
+  </p>
+  
+  <% if @pcategory.categories.exists? %>
+  <% for item in  @pcategory.categories %><br>
+    <% if !item.name.nil? %>
+<%= link_to item.name, {controller: :subcategories, action: :new, id: item.id}, class: "btn btn-primary sub" %>
+<%= link_to 'edit', edit_category_path(item), class: 'btn btn-default sub' %> 
+      <%= link_to 'delete', category_path(item), class: 'btn btn-default sub',
+                      method: :delete, data: { confirm: 'Are you sure?' } %> 
+    <% end %>
 
+  <% end %>
+  <% else %>
+    <p> No categories yet </p>
+  <% end %>
+<% end %>
