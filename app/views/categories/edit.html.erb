@@ -1,6 +1,7 @@
-<h1>Add new subcategory</h1>
+<h1>Update subcategory<span><%= link_to 'back', { action: 'new', id: @category.primecategory_id }, class: 'btn btn-default btn-xs padding-left' %></span>
+</h1>
 
-<%= form_for @category do |f| %>
+<%= bootstrap_form_for @category,  url: { action: :update, id: @category.id} do |f| %>
   <% if @category.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@category.errors.count, "error") %> prohibited
@@ -13,11 +14,11 @@
   </div>
   <% end %>
   <p>
-    <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit 'Update Subcategory' %>
   </p>
 <% end %>
-  
+
+
