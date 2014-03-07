@@ -4,7 +4,7 @@
 
 <h3>Add new article</h3>
 
-<%= bootstrap_form_for @category, url: { action: :create, id: @category.id} do |f| %>
+<%= bootstrap_form_for @subcategory, url: { action: :create, id: @category.id} do |f| %>
   <% if @subcategory.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@subcategory.errors.count, "error") %> prohibited
@@ -17,7 +17,7 @@
   </div>
   <% end %>
   <p>
-    <%= f.text_field :name, placeholder: 'Write a new news subcategory...' %>
+    <%= f.text_field :name, placeholder: 'Write a new article...' %>
   </p>
   <p>
     <%= f.submit 'Create Article' %>
@@ -38,5 +38,5 @@
   <% end %>
 <% end %>
 
-
 <%= @category.inspect %>
+<%= @subcategory.inspect %>
