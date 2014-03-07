@@ -9,5 +9,7 @@ class SubcategoriesController < ApplicationController
   end
 
   def new
+    @category = Category.find(params[:id])
+    @subcategory = @category.subcategories.build
   end
 end

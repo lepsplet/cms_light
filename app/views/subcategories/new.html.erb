@@ -1,2 +1,42 @@
-<h1>Subcategories#new</h1>
-<p>Find me in app/views/subcategories/new.html.erb</p>
+<h1>Articles for <%= @category.name %>
+  <span><%= link_to 'back', { controller: 'categories', action: 'new', id: @category.primecategory_id}, class: 'btn btn-default btn-xs' %></span>
+</h1>
+
+<h3>Add new article</h3>
+
+<%= bootstrap_form_for @category, url: { action: :create, id: @category.id} do |f| %>
+  <% if @subcategory.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@subcategory.errors.count, "error") %> prohibited
+      this article from being saved:</h2>
+    <ul>
+    <% @subcategory.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.text_field :name, placeholder: 'Write a new news subcategory...' %>
+  </p>
+  <p>
+    <%= f.submit 'Create Article' %>
+  </p>
+  
+  <% if @category.subcategories.exists? %>
+  <% for item in  @category.subcategories %><br>
+    <% if !item.name.nil? %>
+      <%= link_to item.name, subcategory_path(item), class: "btn btn-primary sub" %>
+      <%= link_to 'edit', edit_subcategory_path(item), class: 'btn btn-default sub' %> 
+            <%= link_to 'delete', subcategory_path(item), class: 'btn btn-default sub',
+                            method: :delete, data: { confirm: 'Are you sure?' } %> 
+    <% end %>
+
+  <% end %>
+  <% else %>
+    <p> No categories yet </p>
+  <% end %>
+<% end %>
+
+
+<%= @category.inspect %>
