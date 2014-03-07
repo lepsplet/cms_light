@@ -7,16 +7,17 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    @category = Category.find(params[:id])
+     @category = Category.find(params[:id])
   end
   
   def update
     
     @category = Category.find(params[:id])
-    #@pcategory = Primecategory.categories.find(params[:id])
- 
+   
     if @category.update(category_params)
       redirect_to action: 'new', id: @category.primecategory_id
+      #redirect_to edit_category_path(id: @category.primecategory_id)
+
     else
       render 'edit'
     end
@@ -42,7 +43,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @category.destroy
  
-    redirect_to new_category_path
+    redirect_to action: 'new', id: @category.primecategory_id
   end
  
  private
