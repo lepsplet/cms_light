@@ -1,4 +1,18 @@
-<h1>Add new category</h1>
-
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Montez::latin', 'Revalia::latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+	})(); 
+</script>
+<h1 class="text-center Revalia">CMS</h1>
+<h1 class="text-center cms-made-by Montez"><small>made by Toni</small></h1>
 <%= render 'form' %>
 
