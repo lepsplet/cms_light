@@ -15,8 +15,6 @@ class SubcategoriesController < ApplicationController
    
     if @subcategory.update(subcategory_params)
       redirect_to action: 'new', id: @subcategory.category_id
-      #redirect_to edit_category_path(id: @category.primecategory_id)
-
     else
       render 'edit'
     end
