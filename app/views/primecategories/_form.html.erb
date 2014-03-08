@@ -13,16 +13,16 @@
   <p>
     <%= f.text_field :name, placeholder: 'Write a new news category...' %>
   </p>
-  <p>
+  <p class="text-center">
     <%= f.submit 'Create new Category', class: 'btn btn-lg btn-primary' %>
   </p> 
   <br>
-  <h3 class='list-of-news'>List of all news: </h3>
+  <h3 class='list-of-news text-center'>List of all news: </h3>
     <% if !@pcategories.blank? %>
     <% for item in @pcategories %><br>
-  <div>
+  <div class="text-center">
     
-    <div class="primec"><%= link_to item.name, { controller: :categories, action: :new, id: item.id }, class: 'btn btn-success' %> </div><br>
+    <div class="primec"><%= link_to item.name, { controller: :categories, action: :new, id: item.id }, class: 'btn btn-success btn-lg' %> </div><br>
     <%= link_to 'edit', edit_primecategory_path(item), class: 'btn btn-default btn-sm' %>
     <%= link_to 'delete', primecategory_path(item),
                     method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default btn-sm' %> 
