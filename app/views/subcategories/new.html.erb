@@ -17,7 +17,8 @@
   </div>
   <% end %>
   <p>
-    <%= f.text_field :name, placeholder: 'Write a new article...' %>
+    <%= f.text_field :name, label: 'Name of the article', placeholder: 'Write a new article...' %>
+    <%= f.text_area :body, label: 'Article', rows: 10, placeholder: 'Write text for the article...' %>
   </p>
   <p>
     <%= f.submit 'Create Article' %>

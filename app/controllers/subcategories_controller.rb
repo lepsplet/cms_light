@@ -6,6 +6,20 @@ class SubcategoriesController < ApplicationController
   end
 
   def edit
+     @subcategory = Subcategory.find(params[:id])
+  end
+
+  def update
+    
+    @subcategory = Subcategory.find(params[:id])
+   
+    if @subcategory.update(subcategory_params)
+      redirect_to action: 'new', id: @subcategory.category_id
+      #redirect_to edit_category_path(id: @category.primecategory_id)
+
+    else
+      render 'edit'
+    end
   end
 
   def new
@@ -29,6 +43,6 @@ end
  
  private
   def subcategory_params
-    params.require(:subcategory).permit(:name)
+    params.require(:subcategory).permit(:name, :body)
   end
 

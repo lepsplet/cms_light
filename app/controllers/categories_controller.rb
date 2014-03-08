@@ -16,8 +16,6 @@ class CategoriesController < ApplicationController
    
     if @category.update(category_params)
       redirect_to action: 'new', id: @category.primecategory_id
-      #redirect_to edit_category_path(id: @category.primecategory_id)
-
     else
       render 'edit'
     end

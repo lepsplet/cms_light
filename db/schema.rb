@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224094508) do
+ActiveRecord::Schema.define(version: 20140308060111) do
 
   create_table "articles", force: true do |t|
     t.integer  "subcategory_id"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140224094508) do
     t.string   "name",        limit: 50, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "body"
   end
 
 end
