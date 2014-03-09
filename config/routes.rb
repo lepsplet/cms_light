@@ -5,6 +5,7 @@ CmsLight::Application.routes.draw do
 	resources :news, only: [ :index, :new ]
 	resources :primecategories, :categories, :subcategories, :articles
 
+	devise_for :users
 
 
 	# The priority is based upon order of creation: first created -> highest priority.
