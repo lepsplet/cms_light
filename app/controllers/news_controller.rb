@@ -1,6 +1,6 @@
 class NewsController < ApplicationController
   
-  layout 'site'
+  layout 'news'
   
   def index
   end
