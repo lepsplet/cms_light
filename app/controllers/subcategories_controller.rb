@@ -1,5 +1,8 @@
 class SubcategoriesController < ApplicationController
-	def index
+	
+  before_action :signed_in
+  
+  def index
 	end
 
 	def show
@@ -46,7 +49,14 @@ end
 
 
 private
-def subcategory_params
-	params.require(:subcategory).permit(:name, :body)
-end
+  def subcategory_params
+    params.require(:subcategory).permit(:name, :body)
+  end
+
+  def signed_in
+    unless user_signed_in?
+      redirect_to new_user_session_path
+    end
+  end
+
 

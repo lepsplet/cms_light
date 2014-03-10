@@ -1,8 +1,8 @@
 class PrimecategoriesController < ApplicationController
-  def index
-    @pcategories = Primecategory.all
-  end
 
+  before_action :signed_in
+  
+  
   def show
   end
 
@@ -45,5 +45,11 @@ class PrimecategoriesController < ApplicationController
  private
   def primecategory_params
     params.require(:primecategory).permit(:name)
+  end
+  
+  def signed_in
+    unless user_signed_in?
+      redirect_to new_user_session_path
+    end
   end
 end

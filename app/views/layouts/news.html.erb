@@ -58,15 +58,13 @@
         <% end %>
       <% end %>
   
-    <div class="container">
-      
-      <div class="starter-template text-center">
-        <h1>Pravljične novice naših Junakov</h1>
-        <p class="lead">Dobrodošli na spletni strani novičk naših pravljičnih junakov. Izberite kategorijo Globalni Junaki, Slovenija, Japonska, Amerika in bodite na tekočem</p>
-      
-      </div>
-
-    </div><!-- /.container -->
+<%= yield %>
+  
+<% if user_signed_in? %>
+  <div class="text-center">
+    <%= link_to "CMS", new_primecategory_path, class:"btn btn-danger btn-lg" %>
+  </div>
+<% end %>
 
 </body>
 </html>

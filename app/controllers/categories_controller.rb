@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
+  
+  before_action :signed_in
+  
   def index
     @categories = Category.all
   end
@@ -48,4 +51,10 @@ class CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit(:name)
   end
+  
+    def signed_in
+      unless user_signed_in?
+        redirect_to new_user_session_path
+      end
+    end
 end
