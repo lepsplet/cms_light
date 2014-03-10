@@ -50,3 +50,9 @@ h1.Revalia{
 .starter-template {
  margin-top: 20%; 
 }  
+
+.alert{
+   position:absolute;
+   top:50px;
+   width: 100%;
+ }   

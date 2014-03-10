@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$( "h1" ).click(function() {
+  $( this ).fadeOut( "slow" );
+});

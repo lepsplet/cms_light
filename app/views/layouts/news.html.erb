@@ -2,11 +2,12 @@
 <html>
 <head>
 	<title>CmsLight</title>
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
 	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -48,25 +49,24 @@
       </div>
     </div>
 
-<% flash.each do |name, msg| %>
-  <% if msg.is_a?(String) %>
-    <div class="alert alert-<%= name.to_s == 'notice' ? "success" : "danger" %>">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <%= content_tag :div, msg, :id => "flash_#{name}" %>
-    </div>
-  <% end %>
-<% end %>
+      <% flash.each do |name, msg| %>
+        <% if msg.is_a?(String) %>
+          <div class="alert alert-<%= name.to_s == 'notice' ? "success" : "danger" %>">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+          </div>
+        <% end %>
+      <% end %>
   
     <div class="container">
-
+      
       <div class="starter-template text-center">
         <h1>Pravljične novice naših Junakov</h1>
         <p class="lead">Dobrodošli na spletni strani novičk naših pravljičnih junakov. Izberite kategorijo Globalni Junaki, Slovenija, Japonska, Amerika in bodite na tekočem</p>
+      
       </div>
 
     </div><!-- /.container -->
-
-
 
 </body>
 </html>
