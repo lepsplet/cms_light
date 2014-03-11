@@ -1,17 +1,21 @@
-<h2>Sign in</h2>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+<h2 class="text-center">Prijavi se</h2>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+<%= bootstrap_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+  
+    <%= f.email_field :email, autofocus: true, placeholder: 'Vpiši svoj email...', label: 'Email'  %>
 
-  <div><%= f.submit "Sign in" %></div>
+  
+    <%= f.password_field :password, placeholder: 'Vpiši svoje skrivnostno geslo...', label: 'Geslo' %>
+
+  <% if devise_mapping.rememberable? %>
+    <%= f.check_box :remember_me, label: 'zapomni se' %> 
+  <% end %>
+
+    <%= f.submit "Prijavi se", class: 'btn btn-primary btn-lg' %>
 <% end %>
-
+<br>
+<br>
 <%= render "devise/shared/links" %>
+

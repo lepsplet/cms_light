@@ -6,10 +6,12 @@ sl:
       already_confirmed: "je že potrjen, prosimo poskusite se prijaviti"
       not_locked: "ni bil zaklenjen"
       not_saved:
-        one: "1 napaka preprečuje, da bi se podatek %{resource} shranil:"
-        two: "2 napaki preprečujeta, da bi se podatek %{resource} shranil:"
+        one: "1 napaka preprečuje, da bi uspežno zaključili postopek:"
+        two: "2 napaki preprečujeta, da bi uspežno zaključili postopek:"
         few: "%{count} napake preprečujejo, da bi se podatek %{resource} shranil:"
-        other: "%{count} napak preprečuje, da bi se podatek %{resource} shranil:"
+        # other: "2 napaki preprečujeta, da bi uspežno zaključili postopek:"
+       # tukaj nevem kaj je narobe da vzame dve za več
+        other: "Naslednje napake preprečujejo uspešno nadaljevanje:"
  
   devise:
     failure:

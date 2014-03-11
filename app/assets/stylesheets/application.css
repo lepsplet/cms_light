@@ -66,3 +66,15 @@ a:hover {
  top: 3px;
   z-index:99999;
 }
+.starter-devise {
+ margin-top: 10%; 
+}  
+.devise-error {
+ color: #A94442; 
+}  
+.devise-error h2{
+ font-size: 20px;
+ text-align: center;
+} 
+
+  

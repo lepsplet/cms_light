@@ -130,9 +130,9 @@ sl:
     format: ! '%{attribute} %{message}'
     messages:
       accepted: mora biti sprejeto
-      blank: ne sme biti prazno
+      blank: ne sme biti prazen
       confirmation: se ne ujema s potrditvijo
-      empty: ne sme biti prazno
+      empty: ne sme biti prazen
       equal_to: mora biti enako %{count}
       even: mora biti sodo
       exclusion: je rezervirano
