@@ -12,6 +12,9 @@
     s.parentNode.insertBefore(wf, s);
 	})(); 
 </script>
+<div class="text-right">
+  <%= link_to t('sign.out'), destroy_user_session_path, method: :delete %>
+</div>
 <%= link_to news_index_path, title: 'Podji na spletno stran' do %>
   <h1 class="text-center Revalia">CMS</h1>
   <h1 class="text-center cms-made-by Montez"><small>made by Toni</small></h1>
