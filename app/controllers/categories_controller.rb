@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   before_action :signed_in
   
   def index
-    @categories = Category.all
+    
   end
 
   def show
