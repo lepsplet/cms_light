@@ -5,7 +5,7 @@ class NewsController < ApplicationController
   def index
     @pcategories = Primecategory.all
     
-    @categories = Category.all
+
     
   end
 
