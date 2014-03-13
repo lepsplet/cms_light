@@ -7,7 +7,7 @@
     
     <% for article in @articles %>
     
-      <h3> <%= link_to article.name, news_path(article) %> </h3>
+      <h3> <%= link_to article.name, subcategory_path(article) %> </h3>
     <p> <%= truncate( article.body, length: 50 ) %> </p>
     <p> Čas od objave novice: <%= time_ago_in_words ( article.created_at ) %> </p>
     

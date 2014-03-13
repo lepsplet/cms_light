@@ -1,11 +1,18 @@
 class SubcategoriesController < ApplicationController
 	
+  layout :diffrent_layouts
   before_action :signed_in
   
   def index
 	end
 
 	def show
+    @pcategories = Primecategory.all
+    @all_categories = Category.all
+    @category = @all_categories.subcategories.find(params[:id])
+    @articles = @category.subcategories
+
+    
 	end
 
 	def edit
@@ -58,5 +65,16 @@ private
       redirect_to new_user_session_path
     end
   end
+  
+def diffrent_layouts
+    case action_name
+    when "show"
+      "news-show"
+    else
+      "application"
+    end
+
+  
+end
 
 

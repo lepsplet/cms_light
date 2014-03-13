@@ -4,9 +4,6 @@ class NewsController < ApplicationController
   
   def index
     @pcategories = Primecategory.all
-    
-
-    
   end
 
   def show
@@ -14,13 +11,6 @@ class NewsController < ApplicationController
     
     @category = Category.find(params[:id])
     @articles = @category.subcategories
-    
-  end
-  
-  
-  def article
-    @article = @Subcategory.find(params[:id])
-    
   end
   
   
