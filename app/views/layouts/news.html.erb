@@ -41,9 +41,9 @@
 
                 <% categories = prime.categories.all.find(params[:primecategory_id]) %>
              
-                  <% if prime.categories.blank? %>
-                    <li><a>Ups, ni kategorije!</a></li>
-                  <% end %>  
+                <% if prime.categories.blank? %>
+                  <li><a>Ups, ni kategorije!</a></li>
+                <% end %>  
                 
                 <% for category in  categories %>
                 <li>
