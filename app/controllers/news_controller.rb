@@ -18,7 +18,10 @@ class NewsController < ApplicationController
   end
   
   
-  def all_primecategories
+  def article
+    @article = @Subcategory.find(params[:id])
     
   end
+  
+  
 end

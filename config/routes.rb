@@ -1,8 +1,8 @@
 CmsLight::Application.routes.draw do
 
 	root 'news#index'
-
-	resources :news, only: [ :index, :show ]
+  
+  resources :news, only: [ :index, :show, :article ]
 	resources :primecategories, :categories, :subcategories, :articles
 
 	devise_for :users
