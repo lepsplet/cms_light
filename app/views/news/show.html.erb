@@ -1,19 +1,21 @@
 <div class="container">
-  
-  <div class="starter-template text-center">
-    <h1><%= @category.name %></h1>
-    
-    <!-- loop for articles START -->
-    
-    <% for article in @articles %>
-    
-      <h3> <%= link_to article.name, controller: :articles, action: :show, id: article.id %> </h3>
-    <p> <%= truncate( article.body, length: 50 ) %> </p>
-    <p> Čas od objave novice: <%= time_ago_in_words ( article.created_at ) %> </p>
-    
-    
-    <% end %>
-    <!-- loop for articles START -->
-  </div>
+	<div class="row">
+		<div class="starter-template col-md-4 col-md-offset-4">
+			<div class="text-center">
+				<h1><%= @category.name %></h1>
 
+				<!-- loop for articles START -->
+
+				<% for article in @articles %>
+
+					<h3> <%= link_to article.name, controller: :articles, action: :show, id: article.id %> </h3>
+					<p class="text-justify"> <%= truncate( article.body, length: 250 ) %> </p>
+					<p> Čas od objave novice: <%= time_ago_in_words ( article.created_at ) %> </p>
+
+
+				<% end %>
+				<!-- loop for articles START -->
+			</div>
+		</div>
+	</div> <!-- END of row -->
 </div><!-- /.container -->
