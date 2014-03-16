@@ -1,4 +1,4 @@
-<h1>Update article<span><%= link_to 'back', { action: 'new', id: @subcategory.category_id }, class: 'btn btn-default btn-xs padding-left' %></span>
+<h1>Uredi novičko<span><%= link_to 'nazaj', { action: 'new', id: @subcategory.category_id }, class: 'btn btn-default btn-xs padding-left' %></span>
 </h1>
 
 <%= bootstrap_form_for @subcategory,  url: { action: :update, id: @subcategory.id} do |f| %>
@@ -14,11 +14,11 @@
   </div>
   <% end %>
   <p>
-    <%= f.text_field :name, label: 'Name of the article', placeholder: 'Write a new article...' %>
-    <%= f.text_area :body, label: 'Article', rows: 10, placeholder: 'Write text for the article...' %>
+    <%= f.text_field :name, label: 'Ime novičke' %>
+    <%= f.text_area :body, label: 'Article', rows: 10  %>
   </p>
   <p>
-    <%= f.submit 'Update Article' %>
+    <%= f.submit 'Shrani' %>
   </p>
 <% end %>
 
