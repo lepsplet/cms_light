@@ -1,4 +1,4 @@
-<h1>Update subcategory<span><%= link_to 'back', { action: 'new', id: @category.primecategory_id }, class: 'btn btn-default btn-xs padding-left' %></span>
+<h1>Uredi podkategorijo<span><%= link_to 'nazaj', { action: 'new', id: @category.primecategory_id }, class: 'btn btn-default btn-xs padding-left' %></span>
 </h1>
 
 <%= bootstrap_form_for @category,  url: { action: :update, id: @category.id} do |f| %>
@@ -14,10 +14,10 @@
   </div>
   <% end %>
   <p>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, label: 'Ime' %>
   </p>
   <p>
-    <%= f.submit 'Update Subcategory' %>
+    <%= f.submit 'Shrani' %>
   </p>
 <% end %>
 

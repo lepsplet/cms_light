@@ -1,14 +1,22 @@
 class ArticlesController < ApplicationController
-  def index
-    @categories = Primecategory.all
-  end
 
-  def show
-  end
+	layout 'news-show'
 
-  def edit
-  end
+	def index
+	end
 
-  def new
-  end
+	def show
+
+
+    @pcategories = Primecategory.all
+    
+    @category = Subcategory.find(params[:id])
+
+	end
+
+	def edit
+	end
+
+	def new
+	end
 end

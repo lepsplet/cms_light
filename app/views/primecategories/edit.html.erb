@@ -1,4 +1,4 @@
-<h1>Add new subcategory</h1>
+<h1>Dodaj novo podkategorijo</h1>
 
 <%= bootstrap_form_for @pcategory do |f| %>
   <% if @pcategory.errors.any? %>
@@ -13,10 +13,10 @@
   </div>
   <% end %>
   <p>
-    <%= f.text_field :name, placeholder: 'Write a new news category...' %>
+    <%= f.text_field :name, label: 'Ime', placeholder: 'Zapišite novo podkategorijo...' %>
   </p>
   <p>
-    <%= f.submit 'Update Category', class: 'btn btn-lg btn-primary' %>
+    <%= f.submit 'Shrani', class: 'btn btn-primary' %>
   </p> 
  
 <% end %>

@@ -1,8 +1,8 @@
 <h1 class="text-center"><%= @pcategory.name %>
-  <span><%= link_to 'back', new_primecategory_path, class: 'btn btn-default btn-xs' %></span>
+  <span><%= link_to 'nazaj', new_primecategory_path, class: 'btn btn-default btn-xs' %></span>
 </h1>
 
-<h3>Add new subcategory</h3>
+<h3>Dodaj novo podkategorijo</h3>
 
 <%= bootstrap_form_for @category, url: { action: :create, id: @pcategory.id} do |f| %>
   <% if @category.errors.any? %>
@@ -17,23 +17,23 @@
   </div>
   <% end %>
   <p>
-    <%= f.text_field :name, placeholder: 'Write a new news subcategory...' %>
+    <%= f.text_field :name, label: 'Ime', placeholder: 'Zapišite novo podkategorijo...' %>
   </p>
   <p>
-    <%= f.submit 'Create Subcategory' %>
+    <%= f.submit 'Ustvarite podkategorijo' %>
   </p>
   
   <% if @pcategory.categories.exists? %>
   <% for item in  @pcategory.categories %><br>
     <% if !item.name.nil? %>
 <%= link_to item.name, {controller: :subcategories, action: :new, id: item.id}, class: "btn btn-primary sub" %>
-<%= link_to 'edit', edit_category_path(item), class: 'btn btn-default sub' %> 
-      <%= link_to 'delete', category_path(item), class: 'btn btn-default sub',
-                      method: :delete, data: { confirm: 'Are you sure?' } %> 
+<%= link_to 'uredi', edit_category_path(item), class: 'btn btn-default sub' %> 
+      <%= link_to 'izbriši', category_path(item), class: 'btn btn-default sub',
+                      method: :delete, data: { confirm: 'Ali si prepričan?' } %> 
     <% end %>
 
   <% end %>
   <% else %>
-    <p> No categories yet </p>
+    <p>V tej kategoriji ni še nobene podkategorije. Ustvari kakšno :D</p>
   <% end %>
 <% end %>

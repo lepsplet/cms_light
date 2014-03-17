@@ -1,2 +1,10 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div class="container">
+  
+  <div class="starter-template text-center">
+    <h1><%= @category.name %></h1>
+	<p class="text-justify"><%= @category.body %></p>
+    <p>Objavljeno: <%=I18n.l @category.created_at %></p>
+    
+  </div>
+
+</div><!-- /.container -->

@@ -48,7 +48,7 @@ h1.Revalia{
 	font-family: 'Montez', cursive;
 }
 .starter-template {
- margin-top: 20%; 
+ margin: 120px; 
 }  
 
 .alert{
@@ -67,7 +67,7 @@ a:hover {
   z-index:99999;
 }
 .starter-devise {
- margin-top: 10%; 
+ margin-top: 90px; 
 }  
 .devise-error {
  color: #A94442; 
@@ -77,4 +77,3 @@ a:hover {
  text-align: center;
 } 
 
-  

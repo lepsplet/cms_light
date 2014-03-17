@@ -11,21 +11,21 @@
   </div>
   <% end %>
   <p>
-    <%= f.text_field :name, placeholder: 'Write a new news category...' %>
+    <%= f.text_field :name, label: 'Ime', placeholder: 'Zapišite novo kategorijo novic...' %>
   </p>
   <p class="text-center">
-    <%= f.submit 'Create new Category', class: 'btn btn-lg btn-primary' %>
+    <%= f.submit 'Ustvarite novo kategorijo', class: 'btn btn-lg btn-primary' %>
   </p> 
   <br>
-  <h4 class='Revalia list-of-news text-center'>List of all news categories: </h4><br>
+  <h4 class='Revalia list-of-news text-center'>Vse kategorije: </h4><br>
     <% if !@pcategories.blank? %>
     <% for item in @pcategories %><br>
   <div class="text-center">
     
     <div class="primec"><%= link_to item.name, { controller: :categories, action: :new, id: item.id }, class: 'btn btn-success btn-lg' %> </div><br>
-    <%= link_to 'edit', edit_primecategory_path(item), class: 'btn btn-default btn-sm' %>
-    <%= link_to 'delete', primecategory_path(item),
-                    method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default btn-sm' %> 
+    <%= link_to 'uredi', edit_primecategory_path(item), class: 'btn btn-default btn-sm' %>
+    <%= link_to 'izbriši', primecategory_path(item),
+                    method: :delete, data: { confirm: 'Ali ste prepričani?' }, class: 'btn btn-default btn-sm' %> 
   </div>
     <% end %>
   <% else %>

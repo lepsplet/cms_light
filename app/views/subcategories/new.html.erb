@@ -1,8 +1,8 @@
-<h2 class="text-center">Articles for <%= @category.name %>
-<span><%= link_to 'back', { controller: 'categories', action: 'new', id: @category.primecategory_id}, class: 'btn btn-default btn-xs' %></span>
+<h2 class="text-center">Novička za <%= @category.name %>
+<span><%= link_to 'nazaj', { controller: 'categories', action: 'new', id: @category.primecategory_id}, class: 'btn btn-default btn-xs' %></span>
 </h2>
 
-<h3>Add new article</h3>
+<h3>Nova novička</h3>
 
 <%= bootstrap_form_for @subcategory, url: { action: :create, id: @category.id} do |f| %>
 	<% if @subcategory.errors.any? %>
@@ -17,11 +17,11 @@
 		</div>
 	<% end %>
 	<p>
-	<%= f.text_field :name, label: 'Name of the article', placeholder: 'Write a new article...' %>
-	<%= f.text_area :body, label: 'Article',rows: 10, placeholder: 'Write text for the article...' %>
+	<%= f.text_field :name, label: 'Ime novičke', placeholder: 'Zapišite ime novičke...' %>
+	<%= f.text_area :body, label: 'Besedilo novičke',rows: 10, placeholder: 'Zapišite besedilo novičke...' %>
 	</p>
 	<p>
-	<%= f.submit 'Create Article' %>
+	<%= f.submit 'Ustvarite novičko' %>
 	</p>
 
 	<% if @category.subcategories.exists? %>
@@ -29,12 +29,12 @@
 			<% if !item.name.nil? %>
 				<%= link_to item.name, edit_subcategory_path(item), class: 'btn btn-primary sub' %> 
 				<%= link_to 'delete', subcategory_path(item), class: 'btn btn-default sub',
-					method: :delete, data: { confirm: 'Are you sure?' } %> 
+					method: :delete, data: { confirm: 'Ali si prepričan?' } %> 
 			<% end %>
 
 		<% end %>
 	<% else %>
-		<p> No categories yet </p>
+		<p>Ni še nobene novičke v tej kategoriji. Bodi car in napiši kakšno.</p>
 	<% end %>
 <% end %>
 
