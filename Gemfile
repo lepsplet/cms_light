@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.0.0"
+
 gem 'devise'
 
 gem 'bootstrap_form'
@@ -32,6 +34,7 @@ end
 
 group :production do
   gem "pg"
+  gem "rails_12factor"
 end
 
 group :development, :test do

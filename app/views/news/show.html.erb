@@ -11,7 +11,7 @@
 
 					<h3> <%= link_to article.name, controller: :articles, action: :show, id: article.id %> </h3>
 					<p class="text-justify"> <%= truncate( article.body, length: 250 ) %> </p>
-					<p> Čas od objave novice: <%= time_ago_in_words ( article.created_at ) %> </p>
+					<p>Pretekel čas od objave novice: <%= time_ago_in_words ( article.created_at ) %> </p>
 
 
 				<% end %>
